@@ -1,0 +1,47 @@
+   <head> </head>
+
+    <body>
+    <div id="mountains">   
+    </div>
+<script>
+        const mountains = [
+  { name: "Everest", height: 8848, place: "Nepal / China" },
+  { name: "K2", height: 8611, place: "Pakistán / China" },
+  { name: "Kangchenjunga", height: 8586, place: "Nepal / India" },
+  { name: "Lhotse", height: 8516, place: "Nepal / China" },
+  { name: "Makalu", height: 8485, place: "Nepal / China" },
+  { name: "Kilimanjaro", height: 5895, place: "Tanzania" },
+  { name: "Denali", height: 6190, place: "Estados Unidos (Alaska)" },
+  { name: "Mont Blanc", height: 4807, place: "Francia / Italia" },
+  { name: "Aconcagua", height: 6961, place: "Argentina" },
+  { name: "Vinson Massif", height: 4892, place: "Antártida" }
+];
+
+let table = document.createElement("table");
+let tr = document.createElement("tr");
+let columns = mountains[0];
+
+Object.keys(columns).forEach(element => {
+    let title = document.createElement("th");
+    title.appendChild(document.createTextNode(element));
+     tr.appendChild(title);
+});
+table.appendChild(tr); 
+
+mountains.forEach(element => {
+    let td = document.createElement("td");
+    let tr = document.createElement("tr");
+    td.appendChild(document.createTextNode(element.name))
+    tr.appendChild(td);
+    td = document.createElement("td");
+    td.appendChild(document.createTextNode(element.height))
+    tr.appendChild(td);
+    td = document.createElement("td");
+    td.appendChild(document.createTextNode(element.place))
+    tr.appendChild(td);
+    table.appendChild(tr);
+});
+
+let main = document.getElementById("mountains");
+main.appendChild(table);
+    </script></body>
